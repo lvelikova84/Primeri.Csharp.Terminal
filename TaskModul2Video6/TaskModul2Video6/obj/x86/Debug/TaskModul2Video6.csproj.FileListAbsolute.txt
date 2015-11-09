@@ -1,0 +1,4 @@
+C:\aula2\primeri.csharp.terminal\TaskModul2Video6\TaskModul2Video6\bin\Debug\TaskModul2Video6.exe
+C:\aula2\primeri.csharp.terminal\TaskModul2Video6\TaskModul2Video6\bin\Debug\TaskModul2Video6.pdb
+C:\aula2\primeri.csharp.terminal\TaskModul2Video6\TaskModul2Video6\obj\x86\Debug\TaskModul2Video6.exe
+C:\aula2\primeri.csharp.terminal\TaskModul2Video6\TaskModul2Video6\obj\x86\Debug\TaskModul2Video6.pdb

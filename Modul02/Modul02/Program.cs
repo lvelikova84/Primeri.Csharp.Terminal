@@ -51,7 +51,14 @@ namespace Modul02
 
 			Console.WriteLine ("Стандартно делене:" + (7 / 3).ToString ()); // ->2 (7/3=2,333)
 			Console.WriteLine ("Остатък от делене:" + (7 % 3).ToString ()); // ->1 (1/3=0,333)
+			string[,] table = new string[2, 3];
 
+			// Въвеждане на първи ред
+			table[0,0] = "Мартин"; table[0,1] = "Симеонов"; table[0,2] = "31";
+
+			// Въвеждане на втори ред
+			table[1,0] = "Симеон"; table[1,1] = "Мартинов"; table[2,2] = "41";
+			Console.WriteLine((table[0,0])[0] + ". " + table[0,1] + ", " + table[0,2] + " г.");
 
 	}
 }

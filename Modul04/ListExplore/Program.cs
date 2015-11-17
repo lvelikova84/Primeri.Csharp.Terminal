@@ -21,8 +21,19 @@ namespace ListExplore
 				Console.Write ("? ");
 				_userinput = Console.ReadLine();
 				// Добавяне на стойности в листа
+				//add 
+				if (_userinput.ToLower().Contains ("add"))
+					{
+						try
+						{
+							int _add = 0;
 
-
+							if ( int.TryParse( _userinput.Split(' ')[1], out _add))
+							{
+								_list.Add ( _add);
+							}
+						}catch{}
+					}
 				// Преглед на листа
 				if (_userinput.Contains ("show"))
 					{
@@ -33,12 +44,15 @@ namespace ListExplore
 							Console.Write (_list[i] );
 							if (i != _list.Count - 1 ) Console.Write (", ");
 							}
-						Console.WriteLine();
+						Console.WriteLine("\n");
 					}
 							
 
 				// Размер на листа
-
+				if (_userinput.ToLower().Contains( "size" ))
+				{
+					Console.WriteLine("Размер на списъка: " + _list.Count.ToString () + "\n");
+				}
 			} while (_userinput != "exit");
 
 		}

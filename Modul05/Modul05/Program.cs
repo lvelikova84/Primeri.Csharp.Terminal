@@ -25,6 +25,20 @@ namespace Modul05
 						Console.WriteLine( "Командата не е въведена коректно");
 							}
 				}
+				if (usercommand.Contains ( "cmd04") )
+				{
+					double _t = 5, _c = -2;
+
+					if (cmd04 ( ref _t ) )
+					{
+						Console.Write( _t );
+					}
+					if (cmd04 ( ref _c ) )
+					{
+						Console.Write( _t );
+					}
+				}
+
 			} while(usercommand != "exit");
 	
 		}
@@ -75,9 +89,10 @@ namespace Modul05
 
 			public static bool cmd04 ( ref double _i)
 		{
+			double _temp = _i;
 			_i = _i * _i;
 	
-						return (_i > 0);
+						return (_temp > 0);
 		}
 
 	}

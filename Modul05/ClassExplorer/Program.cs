@@ -4,55 +4,73 @@ namespace ClassExplorer
 {
 	public class person
 	{
-		private string simpleString = "тестова променлива за клас";
-		private string user = "";
+		private string _userName = "";
+		private string _userPass = "";
 
-		private string hiddenString = "";
+		private string _userID = "";
+		private string _userFName = "";
+		private string _userLName = "";
 
-		public person ( string _ini)
-		{
-			getUser (_ini);
-			setWelcomeTExt ();
-
-		
-
-//			simpleString = "Промяна на променлива при инициализиране";
+		public string userName {
+			get { return _userName; }
 		}
 
-		private void getUser (string _ini )
-		{
-			if (_ini == "password1")
-				hiddenString = "Потребител 1";
-			if (_ini == "password2")
-				hiddenString = "Потребител 2";
-
-			user = hiddenString;
+		public string userPass {
+			get { return _userPass; }
 		}
 
-		private void setWelcomeTExt ()
-		{
-			if (hiddenString.Length > 0)
-				simpleString = "Добре дошли отново, " + user + "!";
-			else
-				simpleString = "Вие нямата достъп до тази програма";
+		public string userID {
+			get { return _userID; }
+			set { _userID = value; }
 		}
 
-		public string getWelcomeMessage ()
-		{
-			return simpleString;
+		public string userFName {
+			get { return _userFName; }
+			set { _userFName = value; }
 		}
+
+		public string userLName {
+			get { return _userLName; }
+			set { _userLName = value; }
+		}
+
+		public person ( string _user , string _pass)	// входни елементи на class person метод person
+		{
+			checkUser (_user, _pass);
+		}
+
+		private bool checkUser ( string _user , string _pass)
+		{
+			if (_user == "user" && _pass == "pass") {
+				_userName = _user; _userPass = _pass;
+
+				// Попълване на пропъртита
+				userID = "ID: 4455845"; 		//value е "ID: 4455845" и C# сам си я намира
+				_userFName = "Martin";
+				_userLName = "Simeonov";
+
+				return true;
+			}
+
+			return false;
+		}
+
+
 	}
 
 	class MainClass
 	{
 		public static void Main (string[] args)
 		{
-			Console.Write ("Парола: "); string _user = Console.ReadLine ();
+			Console.Write ("Потребител: ");	 string _user = Console.ReadLine ();
+			Console.Write ("Парола: "); 	string _pass = Console.ReadLine ();
 			//Дефиниране на клас
-			person _person = new person( _user );
+			person _person = new person( _user, _pass );
 
 			//Достъпване на клас
-			Console.WriteLine (_person.getWelcomeMessage ());
+			_person.userFName = "Първо име";
+			Console.WriteLine (_person.userFName + " " + _person.userLName ); 
+			//Console.WriteLine (_person.getWelcomeMessage ());
 		}
 	}
 }
